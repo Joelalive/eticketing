@@ -17,6 +17,12 @@ class UserController extends Controller
         return User::all();
     }
 
+    public function login($email)
+    {
+
+        return User::where('email', $email)->get();
+    }    
+
     /**
      * Show the form for creating a new resource.
      *
