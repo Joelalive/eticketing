@@ -14,7 +14,7 @@ class CruiseController extends Controller
      */
     public function index()
     {
-        //
+        return Cruise::all();
     }
 
     /**
