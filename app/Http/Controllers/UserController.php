@@ -2,11 +2,13 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Support\Facades\Auth;
 use App\User;
 use Illuminate\Http\Request;
 
 class UserController extends Controller
-{
+{ 
+    
     /**
      * Display a listing of the resource.
      *
@@ -17,10 +19,14 @@ class UserController extends Controller
         return User::all();
     }
 
-    public function login($email)
+    public function login(Request $request)
     {
-
-        return User::where('email', $email)->get();
+        if (Auth::attempt(array('email' => $request->email, 'password' => $request->password))){
+            return User::whereEmail($request->email)->get();
+            }
+            else {        
+                return "Wrong Credentials";
+            }
     }    
 
     /**

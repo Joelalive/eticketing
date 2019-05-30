@@ -19,7 +19,7 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 
 Route::apiResource('users', 'UserController');
 
-Route::get('login/{email}', 'UserController@login');
+Route::get('login/{email}/{password}', 'UserController@login');
 
 Route::apiResource('cruises', 'CruiseController');
 
