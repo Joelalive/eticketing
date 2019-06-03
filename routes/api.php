@@ -21,6 +21,8 @@ Route::apiResource('users', 'UserController');
 
 Route::get('login/{email}/{password}', 'UserController@login');
 
+Route::post('ticket', 'TicketController@store');
+
 Route::apiResource('cruises', 'CruiseController');
 
 Route::group(['prefix' => 'users'],function(){
