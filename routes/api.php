@@ -23,6 +23,10 @@ Route::get('login/{email}/{password}', 'UserController@login');
 
 Route::post('ticket', 'TicketController@store');
 
+Route::get('ticket', 'TicketController@index');
+
+Route::get('ticket-details', 'TicketDetailsController@index');
+
 Route::apiResource('cruises', 'CruiseController');
 
 Route::group(['prefix' => 'users'],function(){
