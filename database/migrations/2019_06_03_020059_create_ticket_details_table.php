@@ -21,7 +21,7 @@ class CreateTicketDetailsTable extends Migration
             $table->string('seats');
             $table->string('contact');
             $table->string('payment');
-            $table->text('remarks');
+            $table->text('remarks')->nullable();
             $table->timestamps();
         });
     }
